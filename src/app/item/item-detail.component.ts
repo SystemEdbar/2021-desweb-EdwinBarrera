@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 
 import { Item } from './item'
 import { ItemService } from './item.service'
+import { ItemComponent } from "./item.component"
 
 @Component({
   selector: 'ns-details',
