@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { Button, EventData } from '@nativescript/core'
 import { Item } from './item'
 import { ItemService } from './item.service'
 
@@ -17,11 +16,25 @@ export class ItemsComponent implements OnInit {
     this.itemService.getItems().subscribe(
       response => {
         this.items=response.photos;
-        console.dir(this.items);
+        console.log(this.items)
       },
       error => console.log(error)
     );
 
   }
+    postHttp(EventData) :string {
+        return 'https'+ EventData.split('http')[1]
+    }
 
+    onTap(sol,camaraName, fullName, roverName, landingDate, launchDate, status) {
+        this.itemService.sol= sol
+        console.dir(this.itemService.sol)
+        this.itemService.camaraName= camaraName
+        this.itemService.fullName= fullName
+        this.itemService.roverName= roverName
+        this.itemService.landingDate= landingDate
+        this.itemService.launchDate= launchDate
+        this.itemService.status= status
+
+    }
 }

@@ -8,23 +8,17 @@ import { Item } from './item'
   providedIn: 'root',
 })
 export class ItemService {
-public url: string
+public sol: string;
+public camaraName: string;
+public fullName: string;
+public roverName: string;
+public landingDate: string;
+public launchDate: string;
+public status: string;
     constructor(private http: HttpClient){
 
     }
-
-  getItems(): Observable<Object> {
+  getItems(): Observable<any> {
     return this.http.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=DEMO_KEY");
   }
-
-  getDetail(): Observable<Object> {
-      console.dir(this.url)
-      return this.http.get(this.url);
-
-    }
-
-    getItem(id: number): Item {
-      return this.items.filter((item) => item.id === id)[0]
-    }
-
 }

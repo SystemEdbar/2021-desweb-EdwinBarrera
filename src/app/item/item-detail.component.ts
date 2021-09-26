@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router'
 
 import { Item } from './item'
 import { ItemService } from './item.service'
-import { ItemComponent } from "./item.component"
 
 @Component({
   selector: 'ns-details',
@@ -11,11 +10,24 @@ import { ItemComponent } from "./item.component"
 })
 export class ItemDetailComponent implements OnInit {
   item: Item
+  sol: string
+  camaraName: string
+  fullName: string
+  roverName: string
+  landingDate: string
+  launchDate: string
+  status: string
 
   constructor(private itemService: ItemService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.params.id
-    this.item = this.itemService.getItem(id)
+          this.sol=this.itemService.sol
+          this.camaraName=this.itemService.camaraName
+          this.fullName=this.itemService.fullName
+          this.roverName=this.itemService.roverName
+          this.landingDate=this.itemService.landingDate
+          this.launchDate=this.itemService.launchDate
+          this.status=this.itemService.status
+
   }
 }
