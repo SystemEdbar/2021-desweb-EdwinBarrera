@@ -1,10 +1,33 @@
 <ActionBar title="Details"></ActionBar>
 
-<FlexboxLayout flexDirection="column">
+<FlexboxLayout flexDirection="column" backgroundColor="#43b883">
   <FlexboxLayout class="m-15">
-    <Label class="h2" [text]="sol">No esta escrito nada</Label>
-    <Label class="h2" [text]="sol"></Label>
-    <Label class="h2" [text]="camaraName"></Label>
+    <StackLayout>
+      <StackLayout>
+        <Label class="h1" [text]="'Sol: '+ sol + '.'"></Label>
+      </StackLayout>
+      <StackLayout>
+        <Label class="h2" [text]="'Nombre: '+ camaraName"></Label>
+      </StackLayout>
+      <StackLayout>
+        <Label class="h2" [text]="'Nombre Completo: '+ fullName"></Label>
+      </StackLayout>
+      <StackLayout>
+        <Label class="h2" [text]="'Rover: '+ roverName"></Label>
+      </StackLayout>
+      <StackLayout>
+        <Label class="h4" [text]="'Fecha: '+ landingDate + ' - ' + launchDate"></Label>
+      </StackLayout>
+      <StackLayout>
+        <Label class="h4" [text]="'Estado: '+ status"></Label>
+      </StackLayout>
+      <StackLayout>
+          <image width="100"
+                 height="100"
+                 src="{{imgSrc}}"
+          ></image>
+      </StackLayout>
+    </StackLayout>
   </FlexboxLayout>
-  <Label class="h4 m-15" [text]="fullName"></Label>
+
 </FlexboxLayout>

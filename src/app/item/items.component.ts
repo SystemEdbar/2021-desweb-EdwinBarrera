@@ -23,12 +23,13 @@ export class ItemsComponent implements OnInit {
 
   }
     postHttp(EventData) :string {
-        return 'https'+ EventData.split('http')[1]
-    }
+            return 'https'+ EventData.split('http')[1]
+        }
 
-    onTap(sol,camaraName, fullName, roverName, landingDate, launchDate, status) {
+    onTap(sol:string,camaraName:string, fullName:string, roverName:string, img:string, landingDate:string, launchDate:string, status:string) {
         this.itemService.sol= sol
-        console.dir(this.itemService.sol)
+        this.itemService.img='https'+ img.split('http')[1]
+        console.dir(this.itemService.img)
         this.itemService.camaraName= camaraName
         this.itemService.fullName= fullName
         this.itemService.roverName= roverName

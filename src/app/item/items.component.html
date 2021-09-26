@@ -22,18 +22,17 @@ http://docs.nativescript.org/ui/action-bar
       <ng-template let-item="item" let-i="index" >
         <LinearLayout orientation="vertical">
           <StackLayout orientation="horizontal" class="list-group-item" backgroundColor="#43b883">
-            <StackLayout >
+            <StackLayout>
               <label [text]="item.id"
                      fontSize="24"
                      height="45"
                      verticalAlignment="center"
               ></label>
-
               <button
+                      (tap)="onTap(item.sol, item.camera.name, item.camera.full_name, item.rover.name, item.img_src, item.rover.landing_date, item.rover.launch_date, item.rover.status)"
                       [nsRouterLink]="['/item', item.id]"
                       text="{{'Tap me!'}}"
                       textWrap="true"
-                      (tap)="onTap(item.sol,item.camara.name,item.camara.full_name,item.rover.name,item.rover.landing_date,item.rover.launch_date,item.status)"
                       class="-rounded-lg"
                       width="100"
                       height="45"

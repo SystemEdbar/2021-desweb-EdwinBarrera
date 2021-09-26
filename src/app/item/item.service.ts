@@ -15,6 +15,7 @@ public roverName: string;
 public landingDate: string;
 public launchDate: string;
 public status: string;
+public img: string;
     constructor(private http: HttpClient){
 
     }
