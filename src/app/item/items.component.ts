@@ -27,6 +27,7 @@ export class ItemsComponent implements OnInit {
         }
 
     onTap(sol:string,camaraName:string, fullName:string, roverName:string, img:string, landingDate:string, launchDate:string, status:string) {
+
         this.itemService.sol= sol
         this.itemService.img='https'+ img.split('http')[1]
         console.dir(this.itemService.img)

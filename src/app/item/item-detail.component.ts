@@ -17,11 +17,11 @@ export class ItemDetailComponent implements OnInit {
   landingDate: string
   launchDate: string
   status: string
-  imgSrc: string
+  img: string
   constructor(private itemService: ItemService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-          this.imgSrc= this.itemService.img
+          this.img= this.itemService.img
           this.sol=this.itemService.sol
           console.dir(this.sol)
           this.camaraName=this.itemService.camaraName
